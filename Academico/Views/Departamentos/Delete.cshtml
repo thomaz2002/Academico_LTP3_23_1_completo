@@ -1,0 +1,32 @@
+﻿@model Academico.Models.Departamento
+
+@{
+ViewData["Title"] = "Apagar";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Apagar Departamento</h1>
+                    <hr>
+                    <h3>Tem certeza que deseja apagar?</h3>
+                    <div>
+                        <h4>Departamento</h4>
+                        <hr>
+                        <dl class="row">
+                            <dt class="col-sm-3">Nome</dt>
+                            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+                        </dl>
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="DepartamentoId" />
+                            <button type="submit" class="btn btn-danger">Apagar</button> |
+                            <a asp-action="Index" class="btn btn-link">Voltar a Lista de Departamentos</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

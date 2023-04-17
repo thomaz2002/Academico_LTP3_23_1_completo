@@ -1,0 +1,38 @@
+﻿@model Academico.Models.Instituicao
+
+@{
+ViewData["Title"] = "Criar uma nova instituição";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">@ViewData["Title"]</h1>
+                    <hr>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="form-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Endereco" class="form-label"></label>
+                            <input asp-for="Endereco" class="form-control" />
+                            <span asp-validation-for="Endereco" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Gravar</button>
+                        </div>
+                    </form>
+                    <a asp-action="Index" class="btn btn-link">Retornar para a lista de instituições</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
